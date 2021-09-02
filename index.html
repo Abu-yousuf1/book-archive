@@ -10,6 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 </head>
+<!---------- simple some style ---------->
 <style>
     #spinner {
         display: none;
@@ -18,30 +19,57 @@
     #total-book {
         display: none;
     }
+
+    #copy-right {
+        display: none;
+    }
+
+    #err-book-name {
+        display: none;
+    }
+
+    img {
+        width: 300px;
+        height: 200px;
+    }
 </style>
 
 <body>
+    <!------------------ header section--------------------- -->
     <header class="bg-dark py-3">
-        <h1 class="text-success text-center">Welcome to My Book Stor</h1>
+        <h1 class="text-success text-center">Welcome to The Bookstore</h1>
         <div class="d-flex justify-content-center w-50 mx-auto mt-5">
-            <input id="search-field" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <input id="search-field" class="form-control me-2" type="search" placeholder="Search by book name"
+                aria-label="Search">
             <button onclick="getData()" class="btn btn-outline-success" type="submit">Search</button>
         </div>
     </header>
+    <!------------------------main section------------------- -->
     <main>
+        <!-- -------------spinner section ------------------->
         <section class="container mt-5">
             <div class="d-flex justify-content-center m-3">
                 <div id="spinner" class=" spinner-border text-center text-success" role="status">
                     <span class="visually-hidden">Loading...</span>
                 </div>
             </div>
-
+            <!--------------------total book length-------------- -->
             <h4 id="total-book" class="text-center">Total Book: <span id="length-card"></span></h4>
+            <!-------- error handle ------------------------->
+            <div id="err-book-name" class="alert alert-secondary w-50 mx-auto" role="alert">
+                Please enter valid book name !
+            </div>
+            <!-- -------------------book card section--------------------->
             <div id="toggle">
-                <div id="card-container" class="row row-cols-4 g-4 mt-5"></div>
+                <div id="card-container" class="row row-cols-1 row-cols-md-2  row-cols-lg-4 g-5 mt-5"></div>
             </div>
         </section>
     </main>
+    <footer>
+        <div id="copy-right" class="text-center mt-5">
+            <small class="text-muted ">created by &copy; Abu Yousuf</small>
+        </div>
+    </footer>
     <script src="app.js"></script>
 </body>
 
