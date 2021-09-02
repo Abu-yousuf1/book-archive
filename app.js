@@ -1,4 +1,5 @@
 // get Api data ............................
+const errBookName = document.getElementById('err-book-name')
 const getData = async () => {
     const searchField = document.getElementById('search-field')
     const searchValue = searchField.value;
@@ -6,6 +7,7 @@ const getData = async () => {
     toggleSearchResult('none')
     copyRight('none')
     totalBook('none')
+    errBookName.style.display = "none"
     const url = `https://openlibrary.org/search.json?q=${searchValue}`
     const res = await fetch(url);
     const data = await res.json();
@@ -18,7 +20,6 @@ const getData = async () => {
 
 const displayBooks = (books) => {
     const cardContainer = document.getElementById('card-container')
-    const errBookName = document.getElementById('err-book-name')
     cardContainer.textContent = '';
     displaySpinner('none')
     toggleSearchResult('block')
