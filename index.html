@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Archive</title>
+    <!--Bootstrap css style link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+</head>
+<style>
+    #spinner {
+        display: none;
+    }
+
+    #total-book {
+        display: none;
+    }
+</style>
+
+<body>
+    <header class="bg-dark py-3">
+        <h1 class="text-success text-center">Welcome to My Book Stor</h1>
+        <div class="d-flex justify-content-center w-50 mx-auto mt-5">
+            <input id="search-field" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button onclick="getData()" class="btn btn-outline-success" type="submit">Search</button>
+        </div>
+    </header>
+    <main>
+        <section class="container mt-5">
+            <div class="d-flex justify-content-center m-3">
+                <div id="spinner" class=" spinner-border text-center text-success" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+
+            <h4 id="total-book" class="text-center">Total Book: <span id="length-card"></span></h4>
+            <div id="toggle">
+                <div id="card-container" class="row row-cols-4 g-4 mt-5"></div>
+            </div>
+        </section>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>
